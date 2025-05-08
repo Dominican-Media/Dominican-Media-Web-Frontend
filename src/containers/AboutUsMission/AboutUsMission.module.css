@@ -1,0 +1,41 @@
+.container {
+  padding: 4rem;
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.detail:not(.detail:last-child) {
+  margin-bottom: 3rem;
+}
+
+.detail:nth-child(even) > .textSection {
+  order: 1;
+}
+
+.detail > img,
+.detail > div {
+  flex: 1;
+}
+
+.detail > div > h4 {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 120%;
+  width: 90%;
+  margin-bottom: 1.5rem;
+}
+
+.detail > div > p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  width: 80%;
+}
+
+.detail > img {
+  object-fit: cover;
+}

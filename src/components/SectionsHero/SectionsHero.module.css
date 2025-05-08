@@ -1,0 +1,26 @@
+.container {
+  background: linear-gradient(
+    180deg,
+    #3a7d82 0%,
+    rgba(255, 255, 255, 0.8) 100%
+  );
+}
+
+.container > div {
+  padding-inline: 4rem;
+  margin-bottom: 2rem;
+}
+
+.container > div > h1 {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 120%;
+  width: 50%;
+  margin-bottom: 3rem;
+}
+
+.container > img {
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+}

@@ -1,0 +1,53 @@
+.container {
+  padding: 4rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.container > div:nth-child(1) {
+  flex: 2;
+}
+
+.container > div:nth-child(1) > p {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 13.75px;
+  margin-block: 1rem;
+}
+
+.container > div:nth-child(1) > div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.container > div:nth-child(1) > a {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  margin-block: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.container > div:not(.container > div:first-child) {
+  flex: 1;
+}
+
+.container > div:not(.container > div:first-child) > h4 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 13.75px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.container > div:not(.container > div:first-child) > a {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  margin-bottom: 2rem;
+  display: block;
+}

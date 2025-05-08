@@ -1,0 +1,38 @@
+.container {
+  padding: 4rem;
+}
+
+.container > h2 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 13.75px;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.container > p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 2rem;
+  width: 80%;
+  margin-inline: auto;
+}
+
+.container > button {
+  margin-inline: auto;
+  margin-bottom: 3rem;
+}
+
+.shows {
+  display: flex;
+  gap: 20px;
+}
+
+.shows > div {
+  flex: 1;
+}

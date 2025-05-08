@@ -1,0 +1,32 @@
+.container {
+  padding: 72px 4rem;
+}
+
+.container > h2 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 13.75px;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+}
+
+.container > div {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.container > div::-webkit-scrollbar {
+  display: none;
+}
+
+.container > div > img {
+  min-width: 93px;
+  height: 98px;
+  flex-shrink: 0;
+}

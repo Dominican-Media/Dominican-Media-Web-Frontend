@@ -1,0 +1,46 @@
+.container {
+  padding: 4rem;
+  background-color: #000;
+  color: var(--white);
+}
+
+.container > h2 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 13.75px;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+}
+
+.container > div {
+  display: flex;
+  gap: 100px;
+}
+
+.container > div > p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  flex-basis: 50%;
+}
+
+.mailingListContainer > form {
+  flex-basis: 50%;
+}
+
+.mailingListContainer > form > div > label {
+  color: var(--white);
+}
+
+.mailingListContainer > form > div > span > input {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid var(--white);
+  color: var(--white);
+}
+
+.mailingListContainer > form > button {
+  margin-top: 2rem;
+}
