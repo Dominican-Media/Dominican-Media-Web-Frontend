@@ -1,9 +1,20 @@
 .container {
   width: 600px;
+  position: relative;
+}
+
+.back {
+  left: 1rem;
+  top: 1rem;
+  position: absolute;
+  z-index: 2;
+  transform: rotate(180deg);
+  cursor: pointer;
+  display: inline-block;
 }
 
 .videoIframe {
-  height: 450px;
+  height: 420px;
   position: relative;
 }
 
@@ -75,7 +86,7 @@
   font-size: 18px;
   line-height: 120%;
   letter-spacing: 0%;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .description > p {
@@ -83,4 +94,32 @@
   font-size: 15px;
   line-height: 150%;
   letter-spacing: 0%;
+}
+
+.description > div {
+  margin-bottom: 0.5rem;
+}
+
+.seasons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.seasons > div {
+  border: 2px solid var(--gray1);
+  padding: 0.25rem 0.5rem;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.presenters {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import useUpdateSearchParams from "@/hooks/useUpdateSearchParams";
 import Button from "../Button/Button";
 import classes from "./ShowCard.module.css";
 
@@ -18,6 +19,9 @@ const ShowCard = ({
   buttonText,
   buttonAction,
 }: ShowCardTypes) => {
+  // Hooks
+  const { updateSearchParams } = useUpdateSearchParams();
+
   return (
     <div
       className={classes.container}
@@ -33,6 +37,8 @@ const ShowCard = ({
             if (buttonAction) {
               buttonAction();
             }
+
+            updateSearchParams("show", encodeURIComponent(title), "set");
           }}
         >
           <span>{buttonText || "More Details"}</span>

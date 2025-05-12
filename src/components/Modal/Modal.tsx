@@ -3,6 +3,7 @@
 import { setAllModalsFalse } from "@/helpers/modalHandlers";
 import classes from "./Modal.module.css";
 import ReactDom from "react-dom";
+import Close from "@/assets/SvgIcons/Close";
 
 const BackDrop = (props: any) => {
   return <div className={classes.backdrop} onClick={props.onClick} />;
@@ -11,6 +12,7 @@ const BackDrop = (props: any) => {
 const ModalOverlay = (props: any) => {
   return (
     <div className={classes.modal} style={props.style}>
+      <Close onClick={() => props.onClick()} />
       <div>{props.body}</div>
     </div>
   );
@@ -40,6 +42,7 @@ const Modal = (props: any) => {
           header={props.header}
           body={props.body}
           style={props.style}
+          onClick={props.onClick}
         />,
         modalOverlay || document.body
       )}

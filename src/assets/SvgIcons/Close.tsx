@@ -1,25 +1,24 @@
-type ArrowRightTypes = {
-  fill?: string;
+type CloseTypes = {
   onClick?: () => void;
 };
 
-const ArrowRight = ({ fill, onClick }: ArrowRightTypes) => {
+const Close = ({ onClick }: CloseTypes) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       height="20px"
       viewBox="0 -960 960 960"
       width="20px"
-      fill={fill || "#e8eaed"}
+      fill="#e8eaed"
       onClick={() => {
         if (onClick) {
           onClick();
         }
       }}
     >
-      <path d="M630-444H192v-72h438L429-717l51-51 288 288-288 288-51-51 201-201Z" />
+      <path d="m291-240-51-51 189-189-189-189 51-51 189 189 189-189 51 51-189 189 189 189-51 51-189-189-189 189Z" />
     </svg>
   );
 };
 
-export default ArrowRight;
+export default Close;

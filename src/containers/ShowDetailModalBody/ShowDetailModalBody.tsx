@@ -1,12 +1,24 @@
 import Comment from "@/assets/SvgIcons/Comment";
 import Like from "@/assets/SvgIcons/Like";
 import Button from "@/components/Button/Button";
+import EpisodesCard from "@/components/EpisodesCard/EpisodesCard";
+import ServicesCard from "@/components/ServicesCard/ServicesCard";
 import { IMAGES } from "@/utils/constants";
 import { PlayArrow } from "@mui/icons-material";
 import Image from "next/image";
 import classes from "./ShowDetailModalBody.module.css";
+import { TEAM } from "@/utils/constants";
+import SmallUserCard from "@/components/SmallUserCard/SmallUserCard";
 
-const ShowDetailModalBody = () => {
+type ShowDetailModalBodyType = {
+  onClose: () => void;
+  onOpenUser: () => void;
+};
+
+const ShowDetailModalBody = ({
+  onClose,
+  onOpenUser,
+}: ShowDetailModalBodyType) => {
   return (
     <div className={classes.container}>
       <div className={classes.videoIframe}>
@@ -55,10 +67,63 @@ const ShowDetailModalBody = () => {
 
         <div className={classes.description}>
           <h4>Seasons</h4>
+
+          <div className={classes.seasons}>
+            <div>Season 1</div>
+            <div>Season 2</div>
+            <div>Season 3</div>
+          </div>
         </div>
 
         <div className={classes.description}>
           <h4>Episodes</h4>
+
+          <EpisodesCard
+            title="Episode 1"
+            description={`Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Asperiores, quisquam. Officia mollitia libero pariatur atque enim
+            asperiores rem porro illo error! Nisi mollitia eos officiis a
+            doloremque nam pariatur, rem quo corporis numquam quos sed facilis.
+            Atque id sint quibusdam soluta ipsa tenetur nobis quos fugit
+            cupiditate asperiores, voluptatibus quisquam!`}
+          />
+
+          <EpisodesCard
+            title="Episode 1"
+            description={`Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Asperiores, quisquam. Officia mollitia libero pariatur atque enim
+            asperiores rem porro illo error! Nisi mollitia eos officiis a
+            doloremque nam pariatur, rem quo corporis numquam quos sed facilis.
+            Atque id sint quibusdam soluta ipsa tenetur nobis quos fugit
+            cupiditate asperiores, voluptatibus quisquam!`}
+          />
+
+          <EpisodesCard
+            title="Episode 1"
+            description={`Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Asperiores, quisquam. Officia mollitia libero pariatur atque enim
+            asperiores rem porro illo error! Nisi mollitia eos officiis a
+            doloremque nam pariatur, rem quo corporis numquam quos sed facilis.
+            Atque id sint quibusdam soluta ipsa tenetur nobis quos fugit
+            cupiditate asperiores, voluptatibus quisquam!`}
+          />
+        </div>
+
+        <div className={classes.description}>
+          <h4>Presenters</h4>
+
+          <div className={classes.presenters}>
+            {TEAM.map((data) => {
+              return (
+                <SmallUserCard
+                  name={data.name}
+                  image={data.images}
+                  key={data?.name}
+                  onClick={onOpenUser}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

@@ -1,3 +1,5 @@
+"use client";
+
 import classes from "./Button.module.css";
 import React, { CSSProperties } from "react";
 

@@ -1,3 +1,5 @@
+"use client";
+
 import ArrowRight from "@/assets/SvgIcons/ArrowRight";
 import Button from "@/components/Button/Button";
 import { IMAGES } from "@/utils/constants";
