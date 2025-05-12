@@ -1,4 +1,4 @@
-import { modalGenericType } from "@/utilities/types";
+import { modalGenericType } from "@/utils/types";
 import { Dispatch, SetStateAction } from "react";
 
 export const setAllModalsFalse = (
