@@ -2,6 +2,7 @@
 
 import classes from "./Button.module.css";
 import React, { CSSProperties } from "react";
+import { CircularProgress } from "@mui/material";
 
 type ButtonPropTypes = {
   children: React.ReactNode;
@@ -52,11 +53,11 @@ const Button = ({
           : classes.primary
       } ${className}`}
       onClick={onClick}
-      disabled={disabled}
+      disabled={disabled || loading}
       id={id}
       style={style}
     >
-      {loading ? "Loading..." : children}
+      {loading ? <CircularProgress size="1rem" color="inherit" /> : children}
       {icon && <span className={classes.icon}>{icon}</span>}
     </button>
   );

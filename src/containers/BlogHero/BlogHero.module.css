@@ -44,7 +44,7 @@
   margin-bottom: 1.5rem;
 }
 
-.textSection > p:first-child > span {
+.textSection > p:first-child > span:last-child {
   font-weight: 700;
 }
 
@@ -67,4 +67,9 @@
   line-height: 40px;
   letter-spacing: -1.5px;
   margin-bottom: 1.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }

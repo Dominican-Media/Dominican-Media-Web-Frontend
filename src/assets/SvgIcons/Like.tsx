@@ -1,10 +1,15 @@
+import { CircularProgress } from "@mui/material";
+
 type LikeTypes = {
   isActive: boolean;
   onClick?: () => void;
+  isLoading?: boolean;
 };
 
-const Like = ({ isActive, onClick }: LikeTypes) => {
-  return (
+const Like = ({ isActive, onClick, isLoading }: LikeTypes) => {
+  return isLoading ? (
+    <CircularProgress color="inherit" style={{ color: "#000" }} size="1rem" />
+  ) : (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       height="20px"

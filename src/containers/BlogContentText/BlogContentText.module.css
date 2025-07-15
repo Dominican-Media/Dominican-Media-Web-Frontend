@@ -1,11 +1,11 @@
 .container {
-  padding-top: calc(70px + 2rem);
+  padding-top: calc(0rem);
 }
 
 .container > img {
   width: 100%;
-  height: 500px;
-  object-fit: contain;
+  height: 600px;
+  object-fit: cover;
   margin-bottom: 48px;
 }
 
@@ -13,4 +13,31 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 150%;
+}
+
+.textSection > h2,
+.textSection > h1,
+.textSection > h3,
+.textSection > h4,
+.textSection > h5,
+.textSection > h6 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 150%;
+  margin-block: 1rem;
+}
+
+.textSection > p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  margin-bottom: 0.5rem;
+}
+
+.buttonSection {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
 }

@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  gap: 4rem;
+  gap: 3rem;
 }
 
 .container > section:first-child {
@@ -9,4 +9,5 @@
 
 .container > section:nth-child(2) {
   flex: 1;
+  padding-inline: 2rem;
 }

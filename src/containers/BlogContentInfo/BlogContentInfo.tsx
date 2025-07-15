@@ -1,47 +1,74 @@
+import { blogItemType, categoriesType } from "@/utils/types";
 import { Facebook, Instagram, Twitter } from "@mui/icons-material";
 import classes from "./BlogContentInfo.module.css";
+import moment from "moment";
+import { capitalize } from "@mui/material";
+import { capitalizeEachWord } from "@/helpers/capitalize";
 
-const BlogContentInfo = () => {
+interface Props {
+  data: blogItemType;
+  categories: categoriesType[];
+}
+
+const BlogContentInfo: React.FC<Props> = ({ data, categories }) => {
   return (
     <section className={classes.container}>
       <div className={classes.header}>
         <p>
-          Experiences | <span>Video</span>
-        </p>
-        <h2>Cruising in Quarantine</h2>
-        <p>
-          Amid the COVID-19 pandemic, a young family takes a break from long
-          voyages and finds joy staying put in a small bay in Mexico.
-        </p>
-      </div>
+          {data?.category?.map((categoryId, i) => {
+            const categoryTitle = categories?.find(
+              (category) => category?._id === categoryId
+            )?.title;
 
-      <div>
-        <h4>Video by</h4>
-        <p>Dominican media</p>
+            if (i === data?.category?.length - 1) {
+              return (
+                <span key={i}>{capitalize(categoryTitle as string)} </span>
+              );
+            }
+
+            return (
+              <span key={i}>
+                {capitalize((categoryTitle as string) || "")} |{" "}
+              </span>
+            );
+          })}
+        </p>
+        <h2>{data?.title}</h2>
+        <p>{data?.description}</p>
       </div>
 
       <div>
         <h4>Text by</h4>
-        <p>David Nabarro</p>
+        <p>
+          {capitalizeEachWord(
+            `${data?.user?.lastName || ""} ${data?.user?.firstName || ""}`
+          )}
+        </p>
       </div>
 
       <div>
         <h4>Posted</h4>
-        <p>November 1</p>
+        <p>{moment(data?.createdAt).format("Do MMM, YYYY")}</p>
       </div>
 
       <div>
-        <a>
-          <Facebook />
-        </a>
+        {data?.facebookUrl && (
+          <a href={data?.facebookUrl} target="_blank" rel="noreferer">
+            <Facebook />
+          </a>
+        )}
 
-        <a>
-          <Instagram />
-        </a>
+        {data?.instagramUrl && (
+          <a href={data?.instagramUrl} target="_blank" rel="noreferer">
+            <Instagram />
+          </a>
+        )}
 
-        <a>
-          <Twitter />
-        </a>
+        {data?.xUrl && (
+          <a href={data?.xUrl} target="_blank" rel="noreferer">
+            <Twitter />
+          </a>
+        )}
       </div>
     </section>
   );

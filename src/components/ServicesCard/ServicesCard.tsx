@@ -1,18 +1,17 @@
+import { serviceType } from "@/utils/types";
 import Image from "next/image";
 import classes from "./ServicesCard.module.css";
 
 type ServicesCardType = {
-  image: string;
-  title: string;
-  caption: string;
+  data: serviceType;
 };
 
-const ServicesCard = ({ image, title, caption }: ServicesCardType) => {
+const ServicesCard = ({ data }: ServicesCardType) => {
   return (
     <div className={classes.container}>
-      <Image src={image} alt={title} width={610} height={589} />
-      <h4>{title}</h4>
-      <p>{caption}</p>
+      <Image src={data?.image} alt={data?.title} width={610} height={589} />
+      <h4>{data?.title}</h4>
+      <p>{data?.description}</p>
     </div>
   );
 };
