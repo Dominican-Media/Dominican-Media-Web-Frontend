@@ -17,7 +17,6 @@ const OurServices = () => {
     return data?.data;
   }, [data]);
 
-  console.log(services, "Services");
 
   return (
     <MainLayout>
