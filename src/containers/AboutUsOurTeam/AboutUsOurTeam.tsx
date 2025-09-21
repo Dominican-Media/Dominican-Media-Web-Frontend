@@ -9,12 +9,15 @@ const AboutUsOurTeam = () => {
       <p>The amazing team behind the greatness that we provide to you</p>
 
       <div className={classes.teamMembers}>
-        {TEAM.map((data) => {
+        {TEAM.map((data, i) => {
           return (
             <ServicesCard
-              caption={data?.role}
-              image={data?.images}
-              title={data?.name}
+              data={{
+                title: data?.name,
+                image: data?.images?.[0],
+                description: "Team Member",
+                _id: String(i),
+              }}
             />
           );
         })}
